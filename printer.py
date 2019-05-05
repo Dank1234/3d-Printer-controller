@@ -4,7 +4,7 @@ x = "20"
 y = "20"
 z = "20"
 e = "0"
-ip = input('Enter your printers ip:    ')
+ip = input('Enter your printers ip: ')
 requests.get('http://' + ip + '/set?code=G28')
 requests.get('http://' + ip + '/set?code=G0 Z20 X20 Y20')
 while True:
