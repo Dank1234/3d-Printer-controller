@@ -7,8 +7,8 @@ e = "0"
 
 
 
-requests.get('http://192.168.137.203/set?code=G28%27)
-requests.get('http://192.168.137.203/set?code=G0 Z20 X20 Y20')
+requests.get('http://<your printers ip>/set?code=G28%27)
+requests.get('http://<your printers ip>/set?code=G0 Z20 X20 Y20')
 while True:
     if keyboard.is_pressed('a'):
         x = int(x)
@@ -51,4 +51,4 @@ while True:
         print('reboot printer to resume use')
         exit()
 
-    requests.get('http://192.168.137.203/set?code=' + 'G0 Y' + y + 'X' + x + 'Z' + z + 'E' + e)
+    requests.get('<your printers ip>/set?code=' + 'G0 Y' + y + 'X' + x + 'Z' + z + 'E' + e)
