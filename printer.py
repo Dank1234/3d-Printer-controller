@@ -4,11 +4,9 @@ x = "20"
 y = "20"
 z = "20"
 e = "0"
-
-
-
-requests.get('http://<your printers ip>/set?code=G28%27)
-requests.get('http://<your printers ip>/set?code=G0 Z20 X20 Y20')
+ip = input('Enter your printers ip:    ')
+requests.get('http://' + ip + '/set?code=G28')
+requests.get('http://' + ip + '/set?code=G0 Z20 X20 Y20')
 while True:
     if keyboard.is_pressed('a'):
         x = int(x)
@@ -43,12 +41,12 @@ while True:
         e = e-1
         e = str(e)
     if keyboard.is_pressed('c'):
-        requests.get('http://192.168.137.203/set?code=G28%27)
+        requests.get('http://' + ip + '/set?code=G28')
         print('Homing...')
     if keyboard.is_pressed('p'):
-        requests.get('http://192.168.137.203/set?code=M112%27)
+        requests.get('http://' + ip + '/set?code=M112')
         print('STOPPING!')
         print('reboot printer to resume use')
         exit()
-
-    requests.get('<your printers ip>/set?code=' + 'G0 Y' + y + 'X' + x + 'Z' + z + 'E' + e)
+        
+    requests.get('http://' + ip + '/set?code=' + 'G0 Y' + y + 'X' + x + 'Z' + z + 'E' + e)
